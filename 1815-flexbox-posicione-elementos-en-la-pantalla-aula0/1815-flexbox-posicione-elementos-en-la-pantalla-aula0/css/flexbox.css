@@ -1,0 +1,106 @@
+/* creando el menu de navegacion*/
+
+.headerPrincipal .container{
+    display: flex;/*flex permite que los elementos se coloquen uno al lado del otro(solo osupan su lugar)*/
+    align-items: center;/*alinio los intens en el centro*/
+    justify-content: space-between; /* establesco distancia entre dos elementos*/
+}
+.headerPrincipal-nav{
+    display: flex;
+}
+
+/* creando footer */
+.rodapePrincipal-patrocinadores .container{/* poniendo dos atributos separados le digo a css que a todos los hijos de .rodapePrincipal-patrocinadores 
+que tengan la clase .container le aplique los siguientes estilos (tener en cuenta que si no estan separados por ejemplo ".rodapePrincipal-patrocinadores.container"
+hacemos referencia al elementos  .rodapePrincipal-patrocinadores  que tambien tiene como clase a .container*/
+    display: flex;
+    justify-content: space-between;
+}
+.rodapePrincipal-patrocinadores-list{
+    display: flex;
+    justify-content: space-around; /* establesco distancia entodos los sentidos del elemento,en todo su alrededor */
+    align-items: center;
+    width: 70%;
+    margin-right: 5%;
+}
+.rodapePrincipal-contatoForm{
+    width: 25%;
+}
+.rodapePrincipal-navMap-list{
+    display: flex;
+    flex-direction:column;/* para que los items se coloquen uno debajo de otro, como una columna*/
+    height: 260px;
+    flex-wrap: wrap;/* con flex-wrap lo que le decimos es que cuando llegue a la altura establecida se quiebre y forme otra columna*/
+    
+}
+
+/* creando el main */
+
+.contenidoPrincipal-cursos{
+    display: flex;
+    flex-wrap: wrap;
+}
+.contenidoPrincipal-cursos-link{
+    display: flex;
+    width: 23%;
+}
+.videoSobre .container{
+    display: flex;
+}
+.videoSobre-sobre{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+.videoSobre-video{
+    flex-grow: 2; /*se usa para incrementar el tamaño de un elemento */
+}
+.videoSobre-sobre-list{
+    flex-grow: 2;
+    flex-shrink: 4;/* se usa para minimizar el tamaño de un elemento , es lo contrario que grow */
+}
+
+/* aca comienza la creacion del responsive*/
+
+@media(max-width:768px){ 
+
+    .headerPrincipal .container{
+        flex-direction: column;/* por defecto el flexbox tiene flex-direction:row , lo cambiamos a columna para que este uno abajo de otro*/
+        align-items: initial;/*con initial hacemos que se vuelva como estaba antes (me parece jajaja)*/
+        text-align: center; /* centramos los textos*/
+    }
+    .headerPrincipal-nav{
+        flex-direction: column;
+    }
+    .contenidoPrincipal-cursos{
+        flex-direction: column;
+    }
+    .contenidoPrincipal-cursos-link{
+        width: 100%;
+    }
+    .rodapePrincipal-navMap-list{
+        height: auto;/* antes lo estableciamos para que se hagan las columnas unas al lado de otras ahora con auto hacemos que sean una debajo de otra*/
+        flex-wrap: nowrap;/*para que haga una sola columna */
+    }
+    .rodapePrincipal-patrocinadores .container{
+        flex-direction: column;
+    }
+    .rodapePrincipal-contatoForm{
+        width: 100%;
+    }
+    .rodapePrincipal-patrocinadores .container{
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+    .rodapePrincipal-contatoForm-fieldset{
+        justify-content: center;
+    }
+    .headerPrincipal-nav-link-app{
+        order: -1;/*para ordenar los items podemos usar el order y colocar la posicion ,sabiendo que el orden comienza con 0 */
+    }
+    .videoSobre .container{
+        flex-direction: column;
+    }
+
+} 
